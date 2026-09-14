@@ -23,7 +23,7 @@ An interactive teaching-ideas browser built around the Curriculum for Wales.
 - Next.js 16
 - TypeScript
 - Tailwind CSS
-- Vinext and Cloudflare Workers
+- Vercel hosting
 - Lucide icons
 
 ## Run locally
@@ -43,6 +43,12 @@ Create a production build with:
 ```bash
 pnpm build
 ```
+
+## Deploy on Vercel
+
+Import the `JSS9899/Digital-Teaching` repository into Vercel and leave the root directory set to the repository root. Vercel should automatically detect **Next.js** and use `pnpm build`.
+
+No environment variables are required for the current version of the site.
 
 ## Main project files
 
