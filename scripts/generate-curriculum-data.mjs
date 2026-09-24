@@ -54,7 +54,7 @@ for (let areaIndex = 0; areaIndex < descriptors.length; areaIndex += 1) {
   for (let statementIndex = 0; statementIndex < area.statements.length; statementIndex += 1) {
     const statement = area.statements[statementIndex];
     const ideaStatement = teachingIdeas[areaIndex].statements[statementIndex];
-    for (const step of [1, 2, 3]) {
+    for (const step of [2, 3]) {
       const stepKey = String(step);
       for (let index = 0; index < statement.steps[stepKey].length; index += 1) {
         records.push({
@@ -85,7 +85,7 @@ const payload = {
 
 await fs.writeFile(
   path.join(projectRoot, "app/curriculum-data.json"),
-  `${JSON.stringify(payload)}\n`,
+  `${JSON.stringify(payload, null, 2)}\n`,
 );
 
 console.log(JSON.stringify(payload.totals));

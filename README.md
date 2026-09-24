@@ -7,10 +7,10 @@ An interactive teaching-ideas browser built around the Curriculum for Wales.
 ## What the site includes
 
 - All six Areas of Learning and Experience
-- Progression Steps 1, 2 and 3
-- 478 official descriptors of learning
+- Progression Step 2 (Years 1–3) and Progression Step 3 (Years 4–6)
+- 347 official descriptors of learning
 - Two adaptable lesson ideas for every descriptor
-- 956 lesson ideas in total
+- 694 lesson ideas in total
 - Technology-based and barefoot activities
 - A learning goal, equipment list, lesson steps and classroom example for every idea
 - Filters for AoLE, progression step and curriculum statement

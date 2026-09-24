@@ -47,14 +47,13 @@ const iconMap = {
 };
 
 const stepDetails = {
-  1: { label: "Step 1", ages: "Ages 5–8", device: "iPad-led" },
-  2: { label: "Step 2", ages: "Ages 8–11", device: "Mixed devices" },
-  3: { label: "Step 3", ages: "Ages 11+", device: "Chromebook-led" },
+  2: { label: "Progression Step 2", years: "Years 1–3" },
+  3: { label: "Progression Step 3", years: "Years 4–6" },
 } as const;
 
 export default function Home() {
   const [area, setArea] = useState<AreaName>(curriculumData.areas[0].name);
-  const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [step, setStep] = useState<2 | 3>(2);
   const [statement, setStatement] = useState("all");
   const [query, setQuery] = useState("");
   const [expandedId, setExpandedId] = useState<string | null>(null);
@@ -215,8 +214,8 @@ export default function Home() {
                 <span className="grid size-7 place-items-center rounded-full bg-[var(--ink)] text-sm font-black text-white">2</span>
                 <h2 className="text-base font-bold text-slate-900">Choose the learners</h2>
               </div>
-              <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
-                {([1, 2, 3] as const).map((item) => {
+              <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {([2, 3] as const).map((item) => {
                   const active = item === step;
                   const detail = stepDetails[item];
                   return (
@@ -226,7 +225,7 @@ export default function Home() {
                       variant="ghost"
                       onClick={() => setStep(item)}
                       aria-pressed={active}
-                      className="h-auto justify-start gap-3 rounded-xl border px-3 py-3.5 text-left transition-all"
+                      className="h-auto justify-start gap-3 whitespace-normal rounded-xl border px-3 py-3.5 text-left transition-all"
                       style={{
                         borderColor: active ? selectedArea.color : "#e2e8f0",
                         backgroundColor: active ? `${selectedArea.color}0D` : "white",
@@ -243,7 +242,7 @@ export default function Home() {
                       </span>
                       <span className="min-w-0">
                         <span className="block text-sm font-bold text-slate-800">{detail.label}</span>
-                        <span className="block text-sm font-medium text-slate-500">{detail.ages} · {detail.device}</span>
+                        <span className="block text-sm font-medium text-slate-500">{detail.years}</span>
                       </span>
                     </Button>
                   );
@@ -261,7 +260,7 @@ export default function Home() {
                   <Badge className="border-0 text-white" style={{ backgroundColor: selectedArea.color }}>
                     {selectedArea.short}
                   </Badge>
-                  <Badge variant="secondary" className="bg-slate-100 text-slate-600">{stepDetails[step].label} · {stepDetails[step].ages}</Badge>
+                  <Badge variant="secondary" className="bg-slate-100 text-slate-600">{stepDetails[step].label} · {stepDetails[step].years}</Badge>
                 </div>
                 <h2 className="text-xl font-bold tracking-tight text-slate-950">Teaching ideas for {selectedArea.short}</h2>
                 <p className="mt-1 text-sm leading-6 text-slate-500">Pick a learning goal to see two practical lesson options.</p>
